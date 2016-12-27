@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" manifest="test.manifest">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="net.css">
+	<link rel="stylesheet" href="no.css">
+</head>
+<body>
+	<div id="con">付借款还款时间到货付款的价格忽如同仁</div>
+	<img src="images/1.jpg" alt="">
+</body>
+<script>
+//添加update方法后只需刷新一次即呈现改变后的样式
+	applicationCache.update();//检测更新   manifeast文件是否改变
+
+	window.applicationCache.addEventListener('updateready',function  () {//检测更新完成
+		window.applicationCache.swapCache();//更新缓存区域内容
+		
+	},false)
+	window.applicationCache.addEventListener('progress',function  () {
+		console.log(applicationCache.status);
+	},false)
+</script>
+</html>
